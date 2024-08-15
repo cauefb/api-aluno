@@ -26,7 +26,7 @@ public class StudentController {
     @Autowired
     private StudentService service;
 
-    @Operation(summary = "Criar", description = "Metodo para criar um novo aluno", tags = "Students")
+    @Operation(summary = "Criar", description = "Método para criar um novo aluno", tags = "Students")
     @PostMapping
     public ResponseEntity<Student> createStudent(@Valid @RequestBody StudentDto studentDto){
 
@@ -44,7 +44,7 @@ public class StudentController {
         return ResponseEntity.status(HttpStatus.OK).body(list);
     }
 
-    @Operation(summary = "Busca por id", description = "Metodo que retona  um unico registro", tags = "Students")
+    @Operation(summary = "Busca por id", description = "Método que retona  um unico registro", tags = "Students")
     @GetMapping("/{id}")
     public ResponseEntity<Object> getOneStudent(@PathVariable(value="id")Long id){
 
@@ -57,7 +57,7 @@ public class StudentController {
         return status(HttpStatus.OK).body(student.get());
     }
 
-    @Operation(summary = "Editar", description = "Metodo para editar um aluno passando id como parametro", tags = "Students")
+    @Operation(summary = "Editar", description = "Método para editar um aluno.", tags = "Students")
     @PutMapping("/{id}")
     public ResponseEntity<Object> updateStudent(@PathVariable(value="id") Long id,
                                                 @RequestBody @Valid StudentDto studentDto) {
@@ -73,7 +73,7 @@ public class StudentController {
         return ResponseEntity.status(HttpStatus.OK).body(service.updateStudent(studentModel));
     }
 
-    @Operation(summary = "Deletar", description = "Metodo para deletar um registro.", tags = "Students")
+    @Operation(summary = "Deletar", description = "Método para deletar um registro.", tags = "Students")
     @DeleteMapping("/{id}")
     public ResponseEntity<Object> deleteById(@PathVariable(value="id")Long id){
 

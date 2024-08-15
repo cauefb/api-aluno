@@ -12,7 +12,7 @@ public class SwaggerConfig {
     @Bean
     public OpenAPI customAPI(){
         return new OpenAPI().info( new Info().title("API de alunos").version("v1")
-                .license((new License().name("Github").url("https://www.github.com"))
+                .license((new License().name("Github").url("https://github.com/cauefb/api-aluno"))
                 ));
 
 
