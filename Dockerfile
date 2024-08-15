@@ -9,7 +9,7 @@ RUN mvn clean install
 
 FROM openjdk:22-jdk-slim
 
-expose 8080
+EXPOSE 8080
 
 copy --from=build /target/api-0.0.1-SNAPSHOT.jar app.jar
 
